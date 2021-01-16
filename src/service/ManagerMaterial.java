@@ -20,15 +20,23 @@ public class ManagerMaterial {
     }
 //    đọc file
     public void readFile(){
-
+        materialList = (ArrayList<Material>) WriteAndReadFile.read(PATH_FILE);
+        displayAll();
     }
 //hiển thị danh sách vật liệu
     public void displayAll() {
-
+        for (Material m : materialList) {
+            System.out.println(m);
+        }
     }
 //sắp xếp danh sách theo giá tăng dần
     public void sortMaterialsByPrice() {
-
+        Collections.sort(materialList, (o1, o2) -> {
+            if (o1.getPrice() > o2.getPrice()) return 1;
+            else if (o1.getPrice() < o2.getPrice()) return -1;
+            else return 0;
+        });
+        System.out.println(materialList+"\n");
     }
 // hiển thị vật liệu có giá nhỏ nhất và lớn nhất
     public void showMaterialHavePriceMaxAndMin() {
@@ -40,7 +48,13 @@ public class ManagerMaterial {
     }
 //tìm kiếm vật liệu
     public void searchMaterial(String code){
-
+        for (Material m:materialList){
+            if (code.equalsIgnoreCase(m.getMaterialCode())){
+                System.out.println(m);
+                return;
+            }
+        }
+        System.out.println("Không có trong danh sách vật liệu");
     }
 
 
