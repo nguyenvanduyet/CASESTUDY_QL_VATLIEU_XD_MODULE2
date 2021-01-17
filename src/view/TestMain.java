@@ -11,6 +11,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TestMain {
+    public static final String ENTER_MATERIAL = "Enter material";
+    public static final String ENTER_MATERIAL1 = "Cement";
+    public static final String ENTER_MATERIAL2 = "Ceramic";
+    public static final String ENTER_MATERIAL3 = "Steel";
     public static final String ENTER_NAME = "Enter name";
     public static final String ENTER_MATERIAL_CODE = "Enter material Code";
     public static final String ENTER_PRICE = "Enter price";
@@ -24,7 +28,6 @@ public class TestMain {
     public static final String ENTER_AFRICA = "Enter africa";
     public static final String ENTER_LENGTH = "Enter length";
     public static final String ENTER_WEIGHT = "Enter weight";
-    public static final String ENTER_MATERIAL = "Enter material";
     public static final String ENTER_INDEX = "Enter Index";
     public static final String ENTER_CODE = "Enter code";
     public static final String SPACE = "_____________________________________________";
@@ -114,14 +117,14 @@ public class TestMain {
         String manufacturer = sc1.nextLine();
         System.out.println(ENTER_MATERIAL);
         String material = sc.nextLine();
-        if (material.equalsIgnoreCase("Cement")) {
+        if (material.equalsIgnoreCase(ENTER_MATERIAL1)) {
             System.out.println(ENTER_MARK);
             String mark = sc1.nextLine();
             System.out.println(ENTER_MASS);
             double mass = Double.parseDouble(sc.nextLine());
             Cement cement = new Cement(name, materialCode, price, dateOfManufacture, manufacturer, mark, mass);
             managerMaterial.addMaterial(cement);
-        } else if (material.equalsIgnoreCase("Ceramic")) {
+        } else if (material.equalsIgnoreCase(ENTER_MATERIAL2)) {
             System.out.println(ENTER_SIZE);
             String size = sc1.nextLine();
             System.out.println(ENTER_NUMBER);
@@ -130,7 +133,7 @@ public class TestMain {
             String color = sc1.nextLine();
             CeramicTiles ceramicTiles = new CeramicTiles(name, materialCode, price, dateOfManufacture, manufacturer, size, number, color);
             managerMaterial.addMaterial(ceramicTiles);
-        } else if (material.equalsIgnoreCase("Steel")) {
+        } else if (material.equalsIgnoreCase(ENTER_MATERIAL3)) {
             System.out.println(ENTER_AFRICA);
             String africa = sc.nextLine();
             System.out.println(ENTER_LENGTH);
@@ -148,7 +151,6 @@ public class TestMain {
         int index = Integer.parseInt(sc.nextLine());
         managerMaterial.removeMaterialByIndex(index);
     }
-
     public static void search() {
         System.out.println(ENTER_CODE);
         String code = sc.nextLine();
