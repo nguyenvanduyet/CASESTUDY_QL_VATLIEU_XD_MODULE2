@@ -29,15 +29,15 @@ public class CeramicTiles extends Material implements Amount, Serializable {
 
     @Override
     public double getTotalMoney() {
-        return number *getPrice();
+        return number * getPrice();
     }
 
     @Override
     public String toString() {
-        return "CeramicTiles{" +super.toString()+
+        return "CeramicTiles{" + super.toString() +
                 "size='" + size + '\'' +
                 ", amount=" + number +
-                ", Color='" + Color + '\'' +"Total Money"+getTotalMoney()+
+                ", Color='" + Color + '\'' + ",Total Money=" + getTotalMoney() +
                 '}';
     }
 }

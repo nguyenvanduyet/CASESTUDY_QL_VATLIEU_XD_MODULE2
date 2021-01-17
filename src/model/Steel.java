@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Steel extends  Material implements Amount, Serializable {
+public class Steel extends Material implements Amount, Serializable {
     private String africa;
     public double length;
     private double weight;
@@ -29,15 +29,15 @@ public class Steel extends  Material implements Amount, Serializable {
 
     @Override
     public double getTotalMoney() {
-        return weight*getPrice();
+        return weight * getPrice();
     }
 
     @Override
     public String toString() {
-        return "Steel{" + super.toString()+
+        return "Steel{" + super.toString() +
                 "africa='" + africa + '\'' +
                 ", length='" + length + '\'' +
-                ", weight=" + weight + "Total Money"+ getTotalMoney()+
+                ", weight=" + weight + '\'' +",Total Money=" + getTotalMoney() +
                 '}';
     }
 }

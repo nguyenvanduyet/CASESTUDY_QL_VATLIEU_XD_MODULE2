@@ -9,6 +9,7 @@ public abstract class Material implements Serializable {
     private double price;
     private LocalDate dateOfManufacture;
     private String manufacturer;
+
     public Material(String name, String materialCode, double price, LocalDate dateOfManufacture, String manufacturer) {
         this.name = name;
         this.materialCode = materialCode;
@@ -16,6 +17,7 @@ public abstract class Material implements Serializable {
         this.dateOfManufacture = dateOfManufacture;
         this.manufacturer = manufacturer;
     }
+
     public String getName() {
         return name;
     }
