@@ -4,19 +4,19 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Steel extends Material implements Amount, Serializable {
-    private String africa;
+    private String diameter;
     public double length;
     private double weight;
 
-    public Steel(String name, String materialCode, double price, LocalDate dateOfManufacture, String manufacturer, String africa, double length, double weight) {
+    public Steel(String name, String materialCode, double price, LocalDate dateOfManufacture, String manufacturer, String diameter, double length, double weight) {
         super(name, materialCode, price, dateOfManufacture, manufacturer);
-        this.africa = africa;
+        this.diameter = diameter;
         this.length = length;
         this.weight = weight;
     }
 
-    public String getAfrica() {
-        return africa;
+    public String getDiameter() {
+        return diameter;
     }
 
     public double getLength() {
@@ -35,9 +35,9 @@ public class Steel extends Material implements Amount, Serializable {
     @Override
     public String toString() {
         return "Steel{" + super.toString() +
-                "africa='" + africa + '\'' +
+                "africa='" + diameter + '\'' +
                 ", length='" + length + '\'' +
                 ", weight=" + weight + '\'' +",Total Money=" + getTotalMoney() +
-                '}';
+                '}'+"\n";
     }
 }

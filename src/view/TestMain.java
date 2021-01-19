@@ -5,9 +5,7 @@ import model.CeramicTiles;
 import model.Steel;
 import service.ManagerMaterial;
 
-import java.text.DateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TestMain {
@@ -18,7 +16,7 @@ public class TestMain {
     public static final String ENTER_NAME = "Enter name";
     public static final String ENTER_MATERIAL_CODE = "Enter material Code";
     public static final String ENTER_PRICE = "Enter price";
-    public static final String REGEX_DATE_OF_MANUFACTURE = "^[0-9]{4}-[0-9]{2}-[0-9]{2}$";
+    public static final String REGEX_DATE_OF_MANUFACTURE = "^[0-9]{4}\\/[0-9]{2}\\/[0-9]{2}$";
     public static final String ENTER_MANUFACTURE = "Enter manufacture";
     public static final String ENTER_MARK = "Enter mark";
     public static final String ENTER_MASS = "Enter mass";
@@ -47,7 +45,7 @@ public class TestMain {
     public static void main(String[] args) {
         int choice;
         do {
-            System.out.println("Menu");
+            System.out.println("------------Menu-----------");
             System.out.println("1. Thêm vật liệu");
             System.out.println("2. Hiển thị danh sách vật liệu");
             System.out.println("3. Sắp xếp danh sách vật liệu theo giá tăng dần");
@@ -109,7 +107,7 @@ public class TestMain {
             System.out.println("Nhập ngày tháng sản xuất kiểu(yyyy-MM-dd)");
             dateManufacture = sc.nextLine();
             try {
-                dateOfManufacture =LocalDate.parse(dateManufacture);
+                dateOfManufacture = LocalDate.parse(dateManufacture);
             } catch (Exception e) {
             }
         } while (!dateManufacture.matches(REGEX_DATE_OF_MANUFACTURE));
@@ -151,6 +149,7 @@ public class TestMain {
         int index = Integer.parseInt(sc.nextLine());
         managerMaterial.removeMaterialByIndex(index);
     }
+
     public static void search() {
         System.out.println(ENTER_CODE);
         String code = sc.nextLine();

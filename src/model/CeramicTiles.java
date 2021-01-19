@@ -6,13 +6,13 @@ import java.time.LocalDate;
 public class CeramicTiles extends Material implements Amount, Serializable {
     private String size;
     private double number;
-    private String Color;
+    private String color;
 
     public CeramicTiles(String name, String materialCode, double price, LocalDate dateOfManufacture, String manufacturer, String size, double number, String color) {
         super(name, materialCode, price, dateOfManufacture, manufacturer);
         this.size = size;
         this.number = number;
-        Color = color;
+        this.color = color;
     }
 
     public String getSize() {
@@ -24,7 +24,7 @@ public class CeramicTiles extends Material implements Amount, Serializable {
     }
 
     public String getColor() {
-        return Color;
+        return color;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CeramicTiles extends Material implements Amount, Serializable {
         return "CeramicTiles{" + super.toString() +
                 "size='" + size + '\'' +
                 ", amount=" + number +
-                ", Color='" + Color + '\'' + ",Total Money=" + getTotalMoney() +
-                '}';
+                ", Color='" + color + '\'' + ",Total Money=" + getTotalMoney() +
+                '}'+"\n";
     }
 }

@@ -6,7 +6,6 @@ import java.time.LocalDate;
 public class Cement extends Material implements Amount, Serializable {
     private String mark;
     private double mass;
-    private LocalDate expirationDate;
 
     public Cement(String name, String materialCode, double price, LocalDate dateOfManufacture, String manufacturer, String mark, double mass) {
         super(name, materialCode, price, dateOfManufacture, manufacturer);
@@ -36,6 +35,6 @@ public class Cement extends Material implements Amount, Serializable {
         return "Cement{" + super.toString() +
                 "mark='" + mark + '\'' +
                 ", mass=" + mass +'\'' + ",Total Money=" + getTotalMoney() +'\'' + ",Exp=" + getExpirationDate()+
-                '}';
+                '}'+"\n ";
     }
 }

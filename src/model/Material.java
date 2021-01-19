@@ -45,7 +45,6 @@ public abstract class Material implements Serializable {
                 ", materialCode='" + materialCode + '\'' +
                 ", price=" + price +
                 ", dateOfManufacture=" + dateOfManufacture +
-                ", manufacturer='" + manufacturer + '\'' +
-                '}';
+                ", manufacturer='" + manufacturer + ',';
     }
 }
